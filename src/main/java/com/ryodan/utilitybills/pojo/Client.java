@@ -1,21 +1,34 @@
 package com.ryodan.utilitybills.pojo;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.Date;
 import java.util.List;
-
+@Data
+@Entity
+@Table(name = "clients")
 public class Client {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // @OneToOne
+    @OneToOne
     private User user;
+
+    @Column
     private String status;
+
+    @Column
     private Date created;
+
+    @Column
     private Date updated;
-    //@OneToMany
+    @OneToMany
     private List<Accommodation> accommodations;
-    //@OneToOne
+    @OneToOne
     private PaymentInfo paymentInfo;
-    //@OneToMany
+    @OneToMany
     private List <Inquiry> inquiry;
-    //@OneToMany
+    @OneToMany
     private List <Bill> bills;
 }

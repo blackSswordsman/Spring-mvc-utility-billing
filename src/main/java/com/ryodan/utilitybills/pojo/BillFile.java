@@ -1,10 +1,20 @@
 package com.ryodan.utilitybills.pojo;
 
-import java.io.ByteArrayOutputStream;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
+@Entity
+@Table(name = "billFiles")
 public class BillFile {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private ByteArrayOutputStream file;
-    //TODO
-    //path?
+
+    @ManyToOne
+    @JoinColumn(name = "bill")
+    private Bill bill;
+
+    @Column
+    private String filePath;
 }
