@@ -1,11 +1,23 @@
 package com.ryodan.utilitybills.pojo;
 
-import java.io.ByteArrayOutputStream;
-import java.util.Date;
+import jakarta.persistence.*;
+import lombok.Data;
 
+import java.util.Date;
+import java.util.Set;
+
+@Data
+@Entity
+@Table(name = "bills")
 public class Bill { //квитанция
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //@OneToMany
-    private BillFile file;
+
+    @Column
     private Date created;
+
+    @OneToMany
+    @Column
+    private Set<BillFile> file;
 }

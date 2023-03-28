@@ -1,18 +1,38 @@
 package com.ryodan.utilitybills.pojo;
 
-import java.util.Date;
+import jakarta.persistence.*;
+import lombok.Data;
 
+import java.util.Date;
+/**Начисления / к оплате*/
+@Data
+@Entity
+@Table(name = "duePays")
 public class DuePay {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double amountDue;
+
+    @Column
+    private Double amountDue;
+
+    @Column
     private Date periodFor;
-    //private double prepaid;
+
+    @Column
+    private Double prepaid;
+
+    @Column
     private String status;
+
+    @Column
     private Date created;
-    //@OneToOne
+
+    @OneToOne
     private PaymentStatus payment;
-    //@ManyToOne
-    //hjj
+
+    @ManyToOne
+    @JoinColumn(name = "personalAcc")
     private PersonalAccount personalAcc;
 
 }

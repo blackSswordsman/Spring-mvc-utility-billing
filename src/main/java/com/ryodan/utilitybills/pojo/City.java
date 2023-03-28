@@ -1,12 +1,25 @@
 package com.ryodan.utilitybills.pojo;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.List;
 
+@Data
+@Entity
+@Table(name = "cities")
 public class City {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String CityName;
-    //@ManyToOne
+
+    @Column
+    private String cityName;
+
+    @ManyToOne
+    @JoinColumn(name = "region")
     private Region region;
-    //@OneToMany
+
+    @OneToMany
     private List<Street> streets;
 }
