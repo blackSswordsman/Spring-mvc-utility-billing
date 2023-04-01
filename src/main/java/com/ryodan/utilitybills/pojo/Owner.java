@@ -3,26 +3,24 @@ package com.ryodan.utilitybills.pojo;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
-@Table(name = "logins")
-public class Login {
+@Table(name = "owners")
+public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
     private String name;
-
     @Column
-    private Character[] password; //String?
-
+    private String lastName;
     @Column
-    private Date timeStamp;
+    private String middleName;
 
-    @OneToOne
-    @JoinColumn(name = "user")
-    private User user;
+    @OneToMany
+    @JoinColumn(name = "accommodations")
+    private List<Accommodation> accommodations;
 }

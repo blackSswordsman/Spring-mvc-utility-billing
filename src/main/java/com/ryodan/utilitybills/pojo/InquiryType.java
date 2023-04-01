@@ -3,18 +3,21 @@ package com.ryodan.utilitybills.pojo;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**Вид Заявки*/
+
 @Data
 @Entity
-@Table(name = "bill_files")
-public class BillFile {
+@Table(name = "inquiry_types")
+public class InquiryType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "bill")
-    private Bill bill;
-
     @Column
-    private String filePath;
+    private String name;
+
+    @OneToOne
+    @JoinColumn(name = "inquiry")
+    private Inquiry inquiry;
 }

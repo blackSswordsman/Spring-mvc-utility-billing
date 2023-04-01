@@ -4,24 +4,28 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
-import java.util.Set;
+
+/**Содержимое Объявления*/
 
 @Data
 @Entity
-@Table(name = "bills")
-public class Bill { //квитанция
+@Table(name = "posts")
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
+    String name;
+
+    @Column
+    String text;
+
+    @Column
     private Date created;
 
-    @OneToMany
-    @JoinColumn(name = "bill_files")
-    private Set<BillFile> file;
+    @OneToOne
+    @JoinColumn(name = "announcement")
+    private Announcement announcement;
 
-    @ManyToOne
-    @JoinColumn(name = "client")
-    private Client client;
 }

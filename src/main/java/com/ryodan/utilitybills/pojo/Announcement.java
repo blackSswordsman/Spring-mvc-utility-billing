@@ -3,29 +3,27 @@ package com.ryodan.utilitybills.pojo;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
+/**Объявление*/
 
 @Data
 @Entity
-@Table(name = "workers")
-public class Worker {
+@Table(name = "announcements")
+public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
+    private String text;
+
     @OneToOne
-    private User user;
+    @JoinColumn(name = "post")
+    private Post post;
 
     @ManyToOne
     @JoinColumn(name = "management_company")
     private ManagementCompany managementCompany;
 
-    @OneToMany
-    @JoinColumn(name = "response")
-    private List<Response> response;
 
-    @OneToOne
-    @JoinColumn(name = "user")
-    private User user_;
 
 }
