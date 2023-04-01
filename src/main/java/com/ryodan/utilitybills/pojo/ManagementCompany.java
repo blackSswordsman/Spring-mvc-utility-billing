@@ -49,6 +49,6 @@ public class ManagementCompany {
 
     @OneToOne
     @JoinColumn(name = "company_bank_info")
-    private List<CompanyBankInfo> companyBankInfos;
+    private CompanyBankInfo companyBankInfo;
 
 }

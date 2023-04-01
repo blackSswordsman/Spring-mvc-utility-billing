@@ -2,6 +2,8 @@ package com.ryodan.utilitybills.pojo;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -14,34 +16,37 @@ public class Accommodation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="accommodation_type")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="accommodation_type_id")
     private AccommodationType accommodationType;
 
-    @OneToOne
-    @JoinColumn(name = "personal_account")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "personal_account_id")
     private PersonalAccount personalAcc;
 
-    @OneToOne
-    @JoinColumn(name = "address")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany
-    @JoinColumn (name = "reader")
+    @OneToMany(fetch = FetchType.LAZY)
     private List <Reader> reader;
 
-    @ManyToOne
-    @JoinColumn(name = "owner")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @ManyToOne
-    @JoinColumn(name = "management_company")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "management_company_id")
     private ManagementCompany managementCompany;
 
 //TODO check relations
 
-    @OneToMany
-    @JoinColumn(name = "due_pay")
+    @OneToMany(fetch = FetchType.LAZY)
     private List<DuePay> duePay;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
+    @Fetch(FetchMode.JOIN)
+    private Client client;
 
 }

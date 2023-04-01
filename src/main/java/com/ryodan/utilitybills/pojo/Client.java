@@ -2,6 +2,8 @@ package com.ryodan.utilitybills.pojo;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.Date;
 import java.util.List;
@@ -13,8 +15,8 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "user")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column
@@ -26,19 +28,17 @@ public class Client {
     @Column
     private Date updated;
 
-    @OneToMany
-    @JoinColumn(name = "accommodation")
+    @OneToMany(fetch = FetchType.LAZY)
+//    @Fetch(FetchMode.JOIN)
     private List<Accommodation> accommodations;
 
-    @OneToOne
-    @JoinColumn(name = "payment_info")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "payment_info_id")
     private PaymentInfo paymentInfo;
 
-    @OneToMany
-    @JoinColumn(name = "inquiry")
+    @OneToMany(fetch = FetchType.LAZY)
     private List <Inquiry> inquiry;
 
-    @OneToMany
-    @JoinColumn(name = "bills")
+    @OneToMany(fetch = FetchType.LAZY)
     private List <Bill> bills;
 }
