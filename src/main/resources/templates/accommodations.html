@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8", xmlns:th="http://thymeleaf.org">
+    <title>Помещения</title>
+</head>
+<body>
+    <a> Список помещений</a>
+    <div th:each="accommodation : ${accommodations}">
+        <a th:text="${accommodation.getId()}">Помещение</a>
+    </div>
+</body>
+</html>

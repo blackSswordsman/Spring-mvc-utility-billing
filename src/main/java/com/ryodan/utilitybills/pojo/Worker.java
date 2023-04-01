@@ -13,8 +13,9 @@ public class Worker {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    private User user;
+//    @OneToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 
     @ManyToOne
     @JoinColumn(name = "management_company")
@@ -23,9 +24,4 @@ public class Worker {
     @OneToMany
     @JoinColumn(name = "response")
     private List<Response> response;
-
-    @OneToOne
-    @JoinColumn(name = "user")
-    private User user_;
-
 }

@@ -35,9 +35,9 @@ public class User {
     @JoinColumn(name = "client")
     private Client client;
 
-    @OneToOne
-    @JoinColumn(name = "worker")
-    private Worker worker;
+//    @OneToOne
+//    @JoinColumn(name = "worker_id")
+//    private Worker worker;
 
     @OneToOne
     @JoinColumn(name = "login")
