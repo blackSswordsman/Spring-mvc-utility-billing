@@ -3,10 +3,15 @@ package com.ryodan.utilitybills.pojo;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
+/**Вид Счетчика*/
+
 @Data
 @Entity
-@Table(name = "payment_infos")
-public class PaymentInfo {
+@Table(name = "reader_types")
+
+public class ReaderType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,7 +19,7 @@ public class PaymentInfo {
     @Column
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "client")
-    private Client client;
+    @OneToMany
+    @JoinColumn(name = "reader")
+    private List<Reader> readers;
 }

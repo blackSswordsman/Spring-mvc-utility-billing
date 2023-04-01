@@ -5,9 +5,10 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**Статус Начисления*/
 @Data
 @Entity
-@Table(name = "paymentStatuses")
+@Table(name = "payment_statuses")
 public class PaymentStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

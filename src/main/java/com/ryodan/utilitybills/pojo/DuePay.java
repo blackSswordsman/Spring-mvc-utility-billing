@@ -7,7 +7,7 @@ import java.util.Date;
 /**Начисления / к оплате*/
 @Data
 @Entity
-@Table(name = "duePays")
+@Table(name = "due_pays")
 public class DuePay {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,10 +29,15 @@ public class DuePay {
     private Date created;
 
     @OneToOne
+    @JoinColumn(name = "payment")
     private PaymentStatus payment;
 
     @ManyToOne
     @JoinColumn(name = "personalAcc")
     private PersonalAccount personalAcc;
+
+    @ManyToOne
+    @JoinColumn(name = "accommodation")
+    private Accommodation accommodation;
 
 }

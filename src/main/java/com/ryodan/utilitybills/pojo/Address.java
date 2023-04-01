@@ -3,6 +3,8 @@ package com.ryodan.utilitybills.pojo;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 /**Адрес*/
 @Data
 @Entity
@@ -21,5 +23,17 @@ public class Address {
     @ManyToOne(targetEntity = Address.class)
     @JoinColumn(name = "street")
     private Street street;
+
+    @OneToMany
+    @JoinColumn(name = "user")
+    private List<User> user;
+
+    @OneToOne
+    @JoinColumn(name = "accommodation")
+    private Accommodation accommodation;
+
+    @OneToOne
+    @JoinColumn(name = "management_company")
+    private ManagementCompany managementCompany;
 
 }

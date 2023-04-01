@@ -12,7 +12,9 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @OneToOne
+    @JoinColumn(name = "user")
     private User user;
 
     @Column
@@ -23,12 +25,20 @@ public class Client {
 
     @Column
     private Date updated;
+
     @OneToMany
+    @JoinColumn(name = "accommodation")
     private List<Accommodation> accommodations;
+
     @OneToOne
+    @JoinColumn(name = "payment_info")
     private PaymentInfo paymentInfo;
+
     @OneToMany
+    @JoinColumn(name = "inquiry")
     private List <Inquiry> inquiry;
+
     @OneToMany
+    @JoinColumn(name = "bills")
     private List <Bill> bills;
 }
