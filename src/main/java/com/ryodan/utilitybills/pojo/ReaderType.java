@@ -20,6 +20,5 @@ public class ReaderType {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "reader")
     private List<Reader> readers;
 }

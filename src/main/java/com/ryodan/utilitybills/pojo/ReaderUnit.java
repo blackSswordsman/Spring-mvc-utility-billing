@@ -20,7 +20,6 @@ public class ReaderUnit {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "reader")
     private List<Reader> readers;
 
 }

@@ -25,11 +25,9 @@ public class Address {
     private Street street;
 
     @OneToMany
-    @JoinColumn(name = "user")
     private List<User> user;
 
     @OneToOne
-    @JoinColumn(name = "accommodation")
     private Accommodation accommodation;
 
     @OneToOne

@@ -21,6 +21,5 @@ public class Owner {
     private String middleName;
 
     @OneToMany
-    @JoinColumn(name = "accommodations")
     private List<Accommodation> accommodations;
 }

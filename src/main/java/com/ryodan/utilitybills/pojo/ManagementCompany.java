@@ -36,15 +36,12 @@ public class ManagementCompany {
     private Address address;
 
     @OneToMany
-    @JoinColumn(name = "workers")
     private List<Worker> workers;
 
     @OneToMany
-    @JoinColumn(name = "accommodations")
     private List<Accommodation> accommodations;
 
     @OneToMany
-    @JoinColumn(name = "announcement")
     private List<Announcement> announcements;
 
     @OneToOne

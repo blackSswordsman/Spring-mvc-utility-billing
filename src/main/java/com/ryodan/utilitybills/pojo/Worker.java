@@ -22,6 +22,5 @@ public class Worker {
     private ManagementCompany managementCompany;
 
     @OneToMany
-    @JoinColumn(name = "response")
     private List<Response> response;
 }
