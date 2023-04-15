@@ -1,4 +1,4 @@
-package com.ryodan.utilitybills.contoller;
+package com.ryodan.utilitybills.contoller.rest;
 
 import com.ryodan.utilitybills.pojo.AccommodationType;
 import com.ryodan.utilitybills.repository.AccommodationTypeRepository;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/accommodationTypes")
+@RequestMapping("/api/accommodationTypes")
 @RequiredArgsConstructor
 public class AccommodationTypeRestController {
     private final AccommodationTypeRepository accommodationTypeRepository;
