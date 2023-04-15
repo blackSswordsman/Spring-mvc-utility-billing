@@ -21,11 +21,9 @@ public class PersonalAccount {
     private Accommodation accommodation;
 
     @OneToMany
-    @JoinColumn(name = "due_pay")
     private List<DuePay> duePays;
 
     @OneToMany
-    @JoinColumn(name = "inquiry")
     private List<Inquiry> inquiries;
 
 }

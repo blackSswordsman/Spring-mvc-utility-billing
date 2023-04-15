@@ -17,6 +17,5 @@ public class AccommodationType {
     String name;
 
     @OneToMany
-    @JoinColumn (name = "accommodation")
     private List<Accommodation> accommodation;
 }

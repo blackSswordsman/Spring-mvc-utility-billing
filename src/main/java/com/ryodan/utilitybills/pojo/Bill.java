@@ -18,7 +18,6 @@ public class Bill { //квитанция
     private Date created;
 
     @OneToMany
-    @JoinColumn(name = "bill_files")
     private Set<BillFile> file;
 
     @ManyToOne
