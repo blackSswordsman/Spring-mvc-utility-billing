@@ -26,19 +26,19 @@ public class Inquiry {
     String status;
 
     @ManyToOne
-    @JoinColumn(name = "client")
+    @JoinColumn(name = "client_id")
     private Client client;
 
     @ManyToOne
-    @JoinColumn(name = "personal_aacount")
+    @JoinColumn(name = "personal_aacount_id")
     private PersonalAccount personalAcc;
 
     @ManyToOne
-    @JoinColumn (name = "inquiry_type")
+    @JoinColumn (name = "inquiry_type_id")
     private InquiryType inquiryType;
 
     @OneToOne
-    @JoinColumn(name = "response")
+    @JoinColumn(name = "response_id")
     private Response response;
 
 }

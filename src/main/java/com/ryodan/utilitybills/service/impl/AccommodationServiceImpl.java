@@ -22,4 +22,9 @@ public class AccommodationServiceImpl implements AccommodationService {
     public List<Accommodation> getAccommodationsByClientId(Long id) {
         return accommodationRepository.getAccommodationsByClientId(id);
     }
+
+    @Override
+    public String personalAcc (Long id){
+        return accommodationRepository.getPersonalAccount(id);
+    }
 }

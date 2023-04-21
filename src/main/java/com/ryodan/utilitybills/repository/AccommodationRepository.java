@@ -1,6 +1,7 @@
 package com.ryodan.utilitybills.repository;
 
 import com.ryodan.utilitybills.pojo.Accommodation;
+import com.ryodan.utilitybills.pojo.PersonalAccount;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
@@ -29,10 +30,16 @@ public class AccommodationRepository {
         List<Accommodation> accommodations = entityManager.createQuery(HQL, Accommodation.class)
                 .setParameter("clientId", id)
                 .getResultList();
-        log.info(accommodations.toString());
+        //log.info(accommodations.toString());
         return accommodations;
     }
-
+    public String getPersonalAccount (Long id){
+        String HQL = "SELECT a.accountNum FROM Accommodation p INNER JOIN p.personalAcc a where p.id=:accommodationId ";
+        String personalAccount = entityManager.createQuery(HQL, Accommodation.class)
+                .setParameter("accommodationId",id)
+                .getSingleResult().toString();
+        return personalAccount;
+    }
     public void save(Accommodation accommodation) {
         entityManager.persist(accommodation);
     }

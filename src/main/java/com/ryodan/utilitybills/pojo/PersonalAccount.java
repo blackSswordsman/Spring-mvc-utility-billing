@@ -14,10 +14,10 @@ public class PersonalAccount {
     private Long id;
 
     @Column
-    private Long accountNum;
+    private String accountNum;
 
     @OneToOne
-    @JoinColumn(name = "accommodations")
+    @JoinColumn(name = "accommodations_id")
     private Accommodation accommodation;
 
     @OneToMany

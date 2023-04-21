@@ -7,4 +7,6 @@ import java.util.List;
 public interface AccommodationService {
     List<Accommodation> getAllAccommodation();
     List<Accommodation> getAccommodationsByClientId(Long id);
+
+    String personalAcc (Long id);
 }

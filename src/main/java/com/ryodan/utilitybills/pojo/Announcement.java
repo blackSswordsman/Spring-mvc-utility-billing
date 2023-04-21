@@ -17,11 +17,11 @@ public class Announcement {
     private String text;
 
     @OneToOne
-    @JoinColumn(name = "post")
+    @JoinColumn(name = "post_id")
     private Post post;
 
     @ManyToOne
-    @JoinColumn(name = "management_company")
+    @JoinColumn(name = "management_company_id")
     private ManagementCompany managementCompany;
 
 

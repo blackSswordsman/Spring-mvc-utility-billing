@@ -15,6 +15,6 @@ public class PaymentInfo {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "client")
+    @JoinColumn(name = "client_id")
     private Client client;
 }

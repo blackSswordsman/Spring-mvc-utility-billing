@@ -23,11 +23,11 @@ public class Response {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name = "worker")
+    @JoinColumn(name = "worker_id")
     private Worker worker;
 
     @OneToOne
-    @JoinColumn(name = "inquiry")
+    @JoinColumn(name = "inquiry_id")
     private Inquiry inquiry;
 
 

@@ -21,7 +21,7 @@ public class Address {
     private Integer apartment;
 
     @ManyToOne(targetEntity = Address.class)
-    @JoinColumn(name = "street")
+    @JoinColumn(name = "street_id")
     private Street street;
 
     @OneToMany
@@ -31,7 +31,7 @@ public class Address {
     private Accommodation accommodation;
 
     @OneToOne
-    @JoinColumn(name = "management_company")
+    @JoinColumn(name = "management_company_id")
     private ManagementCompany managementCompany;
 
 }

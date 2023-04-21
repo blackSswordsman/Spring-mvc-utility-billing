@@ -3,6 +3,7 @@ package com.ryodan.utilitybills.contoller;
 import com.ryodan.utilitybills.pojo.Accommodation;
 import com.ryodan.utilitybills.repository.AccommodationRepository;
 import com.ryodan.utilitybills.service.AccommodationService;
+import com.ryodan.utilitybills.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,18 +18,22 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccommodationController {
     private final AccommodationService accommodationService;
+    private final AddressService addressService;
 
     @GetMapping()
     public String getAllAccommodations(Model model) {
         List<Accommodation> accommodations = accommodationService.getAllAccommodation();
         model.addAttribute("accommodations", accommodations);
+        model.addAttribute("address",addressService.getAllAddresses());
+
         return "accommodations";
     }
 
-    @GetMapping("/{clientId}")
+  /*  @GetMapping("/{clientId}")
     public String getAllAccommodationsForClient(@PathVariable("clientId") Long id, Model model) {
         List<Accommodation> accommodations = accommodationService.getAccommodationsByClientId(id);
         model.addAttribute("accommodations", accommodations);
         return "accommodations";
-    }
+    }*/
+
 }

@@ -33,15 +33,15 @@ public class Reader {
         private Date lastReadingDate; //дата последних показаний
 
         @ManyToOne
-        @JoinColumn (name = "reader_type")
+        @JoinColumn (name = "reader_type_id")
         private ReaderType readerType;
 
         @ManyToOne
-        @JoinColumn(name = "reader_unit")
+        @JoinColumn(name = "reader_unit_id")
         private ReaderUnit readerUnit;
 
         @ManyToOne
-        @JoinColumn(name = "accommodation")
+        @JoinColumn(name = "accommodation_id")
         private Accommodation accommodation;
 
 
