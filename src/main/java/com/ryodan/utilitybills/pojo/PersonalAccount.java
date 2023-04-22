@@ -17,7 +17,7 @@ public class PersonalAccount {
     private String accountNum;
 
     @OneToOne
-    @JoinColumn(name = "accommodations_id")
+    @JoinColumn(name = "accommodation_id")
     private Accommodation accommodation;
 
     @OneToMany

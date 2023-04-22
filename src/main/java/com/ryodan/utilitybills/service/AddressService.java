@@ -10,5 +10,5 @@ public interface AddressService {
     Address getAddressById(Long id);
     void deleteAddressById(Long id);
 
-    String getFullAddressString(Long id);
+    String getFullAddressByAccommodationId(Long id);
 }

@@ -30,7 +30,7 @@ public class Inquiry {
     private Client client;
 
     @ManyToOne
-    @JoinColumn(name = "personal_aacount_id")
+    @JoinColumn(name = "personal_account_id")
     private PersonalAccount personalAcc;
 
     @ManyToOne

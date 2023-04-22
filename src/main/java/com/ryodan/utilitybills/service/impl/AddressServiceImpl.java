@@ -25,7 +25,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void saveAddress(Address address) {
-        this.addressRepository.save(address);
+        addressRepository.save(address);
     }
 
     @Override
@@ -35,11 +35,11 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void deleteAddressById(Long id) {
-        this.deleteAddressById(id);
+        deleteAddressById(id);
     }
 
     @Override
-    public String getFullAddressString(Long id) {
+    public String getFullAddressByAccommodationId (Long id) {
 
         Address address=this.getAddressById(id);
         Street street = address.getStreet();

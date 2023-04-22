@@ -24,7 +24,8 @@ public class AccommodationServiceImpl implements AccommodationService {
     }
 
     @Override
-    public String personalAcc (Long id){
-        return accommodationRepository.getPersonalAccount(id);
+    public String getPersonalAccountNumberByAccommodationId(Long id) {
+        return null;
     }
+
 }

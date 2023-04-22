@@ -33,13 +33,6 @@ public class AccommodationRepository {
         //log.info(accommodations.toString());
         return accommodations;
     }
-    public String getPersonalAccount (Long id){
-        String HQL = "SELECT a.accountNum FROM Accommodation p INNER JOIN p.personalAcc a where p.id=:accommodationId ";
-        String personalAccount = entityManager.createQuery(HQL, Accommodation.class)
-                .setParameter("accommodationId",id)
-                .getSingleResult().toString();
-        return personalAccount;
-    }
     public void save(Accommodation accommodation) {
         entityManager.persist(accommodation);
     }
