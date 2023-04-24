@@ -29,15 +29,15 @@ public class DuePay {
     private Date created;
 
     @OneToOne
-    @JoinColumn(name = "payment")
+    @JoinColumn(name = "payment_id")
     private PaymentStatus payment;
 
     @ManyToOne
-    @JoinColumn(name = "personalAcc")
+    @JoinColumn(name = "personalAcc_id")
     private PersonalAccount personalAcc;
 
     @ManyToOne
-    @JoinColumn(name = "accommodation")
+    @JoinColumn(name = "accommodationId_id")
     private Accommodation accommodation;
 
 }

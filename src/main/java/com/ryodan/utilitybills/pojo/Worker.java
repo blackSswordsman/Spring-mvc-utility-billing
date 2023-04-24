@@ -18,7 +18,7 @@ public class Worker {
 //    private User user;
 
     @ManyToOne
-    @JoinColumn(name = "management_company")
+    @JoinColumn(name = "management_company_id")
     private ManagementCompany managementCompany;
 
     @OneToMany

@@ -25,7 +25,7 @@ public class Post {
     private Date created;
 
     @OneToOne
-    @JoinColumn(name = "announcement")
+    @JoinColumn(name = "announcement_id")
     private Announcement announcement;
 
 }

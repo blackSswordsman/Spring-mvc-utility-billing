@@ -21,6 +21,6 @@ public class Bill { //квитанция
     private Set<BillFile> file;
 
     @ManyToOne
-    @JoinColumn(name = "client")
+    @JoinColumn(name = "client_id")
     private Client client;
 }

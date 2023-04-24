@@ -2,6 +2,7 @@ package com.ryodan.utilitybills.pojo;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,24 +15,27 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column
     private Integer houseNum;
 
     @Column
     private Integer apartment;
 
-    @ManyToOne(targetEntity = Address.class)
-    @JoinColumn(name = "street")
+    @ToString.Exclude
+    @ManyToOne
+    @JoinColumn(name = "street_id")
     private Street street;
 
     @OneToMany
     private List<User> user;
 
+    @ToString.Exclude
     @OneToOne
     private Accommodation accommodation;
 
     @OneToOne
-    @JoinColumn(name = "management_company")
+    @JoinColumn(name = "management_company_id")
     private ManagementCompany managementCompany;
 
 }

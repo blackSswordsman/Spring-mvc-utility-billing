@@ -2,6 +2,7 @@ package com.ryodan.utilitybills.pojo;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,10 +15,11 @@ public class PersonalAccount {
     private Long id;
 
     @Column
-    private Long accountNum;
+    private String accountNum;
 
+    @ToString.Exclude
     @OneToOne
-    @JoinColumn(name = "accommodations")
+    @JoinColumn(name = "accommodation_id")
     private Accommodation accommodation;
 
     @OneToMany

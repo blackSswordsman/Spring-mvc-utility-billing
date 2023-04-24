@@ -32,7 +32,7 @@ public class ManagementCompany {
     private String regNumber; //ОГРН
 
     @OneToOne
-    @JoinColumn(name = "address")
+    @JoinColumn(name = "address_id")
     private Address address;
 
     @OneToMany
@@ -45,7 +45,7 @@ public class ManagementCompany {
     private List<Announcement> announcements;
 
     @OneToOne
-    @JoinColumn(name = "company_bank_info")
+    @JoinColumn(name = "company_bank_info_id")
     private CompanyBankInfo companyBankInfo;
 
 }

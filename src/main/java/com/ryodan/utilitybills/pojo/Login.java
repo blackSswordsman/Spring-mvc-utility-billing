@@ -23,6 +23,6 @@ public class Login {
     private Date timeStamp;
 
     @OneToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name = "user_id")
     private User user;
 }

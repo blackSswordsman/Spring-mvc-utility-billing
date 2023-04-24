@@ -12,7 +12,7 @@ public class BillFile {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "bill")
+    @JoinColumn(name = "bill_id")
     private Bill bill;
 
     @Column

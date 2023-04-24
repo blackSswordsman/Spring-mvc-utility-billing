@@ -1,6 +1,7 @@
 package com.ryodan.utilitybills.repository;
 
 import com.ryodan.utilitybills.pojo.Accommodation;
+import com.ryodan.utilitybills.pojo.PersonalAccount;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +33,6 @@ public class AccommodationRepository {
         log.info(accommodations.toString());
         return accommodations;
     }
-
     public void save(Accommodation accommodation) {
         entityManager.persist(accommodation);
     }

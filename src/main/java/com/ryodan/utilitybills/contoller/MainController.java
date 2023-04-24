@@ -2,7 +2,6 @@ package com.ryodan.utilitybills.contoller;
 
 import com.ryodan.utilitybills.pojo.Accommodation;
 import com.ryodan.utilitybills.pojo.Client;
-import com.ryodan.utilitybills.pojo.Inquiry;
 import com.ryodan.utilitybills.repository.ClientRepository;
 import com.ryodan.utilitybills.repository.InquiryRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,17 +23,17 @@ public class MainController {
 
     @GetMapping
     public String getHomePage() {
-        return "home";
+        return "home_test_navbar";
     }
 
     @GetMapping("profile/{clientId}")
     public String getProfilePage(@PathVariable Long clientId, Model model) {
         Client client = clientRepository.getByPrimaryKey(clientId, Client.class);
-        Inquiry sdfsd = inquiryRepository.getByName("sdfsd");
+        //Inquiry sdfsd = inquiryRepository.getByName("sdfsd");
         List<Long> accommodationsIdList = client.getAccommodations().stream()
                 .map(Accommodation::getId)
                 .collect(Collectors.toList());
         model.addAttribute("accommodationsIdList",accommodationsIdList);
-        return "profile";
+        return "test_acc_old";
     }
 }

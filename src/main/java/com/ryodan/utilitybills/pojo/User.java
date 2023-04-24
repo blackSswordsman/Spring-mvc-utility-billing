@@ -28,11 +28,11 @@ public class User {
     //User-role
 
     @ManyToOne
-    @JoinColumn(name = "address")
+    @JoinColumn(name = "address_id")
     private Address address;
 
     @OneToOne
-    @JoinColumn(name = "client")
+    @JoinColumn(name = "client_id")
     private Client client;
 
 //    @OneToOne
@@ -40,7 +40,7 @@ public class User {
 //    private Worker worker;
 
     @OneToOne
-    @JoinColumn(name = "login")
+    @JoinColumn(name = "login_id")
     private Login login;
 
 }
