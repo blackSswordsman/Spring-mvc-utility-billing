@@ -2,8 +2,10 @@ package com.ryodan.utilitybills.contoller;
 
 import com.ryodan.utilitybills.pojo.Accommodation;
 import com.ryodan.utilitybills.repository.AccommodationRepository;
+import com.ryodan.utilitybills.repository.PersonalAccountRepository;
 import com.ryodan.utilitybills.service.AccommodationService;
 import com.ryodan.utilitybills.service.AddressService;
+import com.ryodan.utilitybills.service.PersonalAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,21 +21,23 @@ import java.util.List;
 public class AccommodationController {
     private final AccommodationService accommodationService;
     private final AddressService addressService;
+    private final PersonalAccountService personalAccountService;
 
-    @GetMapping()
-    public String getAllAccommodations(Model model) {
+   /* @GetMapping()
+    public String getAllAccommodations(Long id,Model model) {
         List<Accommodation> accommodations = accommodationService.getAllAccommodation();
         model.addAttribute("accommodations", accommodations);
-        model.addAttribute("address",addressService.getAllAddresses());
+        //model.addAttribute("FullAddress",addressService.getFullAddressByAccommodationId());
+       // model.addAttribute("personalAccount",accommodationService.getPersonalAccountNumberByAccommodationId())
 
         return "accommodations";
-    }
+    }*/
 
-  /*  @GetMapping("/{clientId}")
+    @GetMapping("/{clientId}")
     public String getAllAccommodationsForClient(@PathVariable("clientId") Long id, Model model) {
         List<Accommodation> accommodations = accommodationService.getAccommodationsByClientId(id);
         model.addAttribute("accommodations", accommodations);
         return "accommodations";
-    }*/
+    }
 
 }

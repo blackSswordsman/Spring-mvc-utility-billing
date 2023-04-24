@@ -67,7 +67,7 @@
                             </thead>
                             <tbody>
                             <tr th:each="accommodation : ${accommodations}">
-                                <td th:utext="${accommodation.getPersonalAcc()}">Помещение №ЛС</td>
+                                <td th:utext="${accommodation.getPersonalAcc().getAccountNum()}">Помещение №ЛС</td>
                                 <td th:utext="${accommodation.getAddress()}">Адрес</td>
                                 <td th:utext="${accommodation.getManagementCompany()}">УК</td>
                                 <td th:utext="${accommodation.getDuePay()}">Счет</td>

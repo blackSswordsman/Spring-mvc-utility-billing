@@ -2,6 +2,7 @@ package com.ryodan.utilitybills.pojo;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class PersonalAccount {
     @Column
     private String accountNum;
 
+    @ToString.Exclude
     @OneToOne
     @JoinColumn(name = "accommodation_id")
     private Accommodation accommodation;

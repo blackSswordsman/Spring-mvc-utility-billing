@@ -8,5 +8,5 @@ public interface AccommodationService {
     List<Accommodation> getAllAccommodation();
     List<Accommodation> getAccommodationsByClientId(Long id);
 
-    String getPersonalAccountNumberByAccommodationId (Long id);
+    List <String> getPersonalAccountNumberByAccommodationId (Long id);
 }
