@@ -30,7 +30,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address getAddressById(Long id) {
-        return null;
+        return addressRepository.getReferenceById(id);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public String getFullAddressByAccommodationId (Long id) {
+    public String getFullAddressByClientId (Long id) {
 
         Address address=this.getAddressById(id);
         Street street = address.getStreet();

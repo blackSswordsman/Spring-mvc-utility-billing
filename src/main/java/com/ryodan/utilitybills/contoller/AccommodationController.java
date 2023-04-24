@@ -37,6 +37,7 @@ public class AccommodationController {
     public String getAllAccommodationsForClient(@PathVariable("clientId") Long id, Model model) {
         List<Accommodation> accommodations = accommodationService.getAccommodationsByClientId(id);
         model.addAttribute("accommodations", accommodations);
+        model.addAttribute("accommodationAddress",addressService.getFullAddressByClientId(id));
         return "accommodations";
     }
 

@@ -26,6 +26,7 @@ public class Accommodation {
     @JoinColumn(name = "personal_account_id")
     private PersonalAccount personalAcc;
 
+    @ToString.Exclude
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Address address;

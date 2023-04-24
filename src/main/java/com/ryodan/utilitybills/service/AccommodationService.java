@@ -9,4 +9,6 @@ public interface AccommodationService {
     List<Accommodation> getAccommodationsByClientId(Long id);
 
     List <String> getPersonalAccountNumberByAccommodationId (Long id);
+
+
 }
