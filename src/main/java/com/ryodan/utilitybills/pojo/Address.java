@@ -31,11 +31,11 @@ public class Address {
     private List<User> user;
 
     //@ToString.Exclude
-    @OneToOne
-    private Accommodation accommodation;
+    /*@OneToOne
+    private Accommodation accommodation;*/
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "management_company_id")
-    private ManagementCompany managementCompany;
+    private ManagementCompany managementCompany;*/
 
 }

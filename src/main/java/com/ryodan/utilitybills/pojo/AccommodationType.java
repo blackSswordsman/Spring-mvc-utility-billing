@@ -13,6 +13,7 @@ public class AccommodationType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
     @Column
     String name;
 

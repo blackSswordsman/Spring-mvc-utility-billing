@@ -32,9 +32,9 @@ public class Client {
     @Fetch(FetchMode.JOIN)
     private List<Accommodation> accommodations;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "payment_info_id")
-    private PaymentInfo paymentInfo;
+    @OneToMany(fetch = FetchType.LAZY)
+    @Fetch(FetchMode.JOIN)
+    private List <PaymentInfo> paymentInfos;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List <Inquiry> inquiry;

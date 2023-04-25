@@ -17,7 +17,7 @@ public class InquiryType {
     @Column
     private String name;
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "inquiry_id")
-    private Inquiry inquiry;
+    private Inquiry inquiry;*/
 }

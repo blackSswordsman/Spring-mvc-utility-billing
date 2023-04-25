@@ -26,9 +26,9 @@ public class Response {
     @JoinColumn(name = "worker_id")
     private Worker worker;
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "inquiry_id")
-    private Inquiry inquiry;
+    private Inquiry inquiry;*/
 
 
 }

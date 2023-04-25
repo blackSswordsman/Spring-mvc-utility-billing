@@ -6,6 +6,7 @@ import com.ryodan.utilitybills.repository.PersonalAccountRepository;
 import com.ryodan.utilitybills.service.AccommodationService;
 import com.ryodan.utilitybills.service.AddressService;
 import com.ryodan.utilitybills.service.PersonalAccountService;
+import com.ryodan.utilitybills.wrapper.AccommodationWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +37,10 @@ public class AccommodationController {
     @GetMapping("/{clientId}")
     public String getAllAccommodationsForClient(@PathVariable("clientId") Long id, Model model) {
         List<Accommodation> accommodations = accommodationService.getAccommodationsByClientId(id);
-        model.addAttribute("accommodations", accommodations);
-        model.addAttribute("accommodationAddress",addressService.getFullAddressByClientId(id));
+        List<AccommodationWrapper> accommodationWrapperList = accommodations.stream()
+                .map(a -> new AccommodationWrapper(a, addressService.getConvertedAddressFromAccommodation(a)))
+                .toList();
+        model.addAttribute("accommodations", accommodationWrapperList);
         return "accommodations";
     }
 

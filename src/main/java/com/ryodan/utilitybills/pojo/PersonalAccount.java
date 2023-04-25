@@ -18,9 +18,9 @@ public class PersonalAccount {
     private String accountNum;
 
    // @ToString.Exclude
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "accommodation_id")
-    private Accommodation accommodation;
+    private Accommodation accommodation;*/
 
     @OneToMany
     private List<DuePay> duePays;

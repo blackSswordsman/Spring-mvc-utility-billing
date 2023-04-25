@@ -62,19 +62,17 @@
                                 <th>Тип помещения</th>
                                 <th>Адрес</th>
                                 <th>УК</th>
-                                <th>Счет</th>
-                                <th> Счетчики</th>
+                                <th>Счетчики</th>
+                                <th> Счет</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="accommodation : ${accommodations}">
-                                <td th:utext="${accommodation.getPersonalAcc().getAccountNum()}">Помещение №ЛС</td>
-                                <td th:utext="${accommodation.getAccommodationType().getName()}">Тип помещения</td>
-                                <td th:utext="${accommodation.getAddress().getStreet().getStreetName()}+' '
-                                +${accommodation.getAddress().getStreet().getCity().getCityName()}">Адрес</td>
-                                <td th:utext="${accommodationAddress}">УК</td>
-                                <td th:utext="${accommodation.getDuePay()}">На счету</td>
+                                <td th:utext="${accommodation.getAccommodation().getPersonalAcc().getAccountNum()}">Помещение №ЛС</td>
+                                <td th:utext="${accommodation.getAccommodation().getAccommodationType().getName()}">Тип помещения</td>
+                                <td th:utext="${accommodation.getAddress()}">Адрес</td>
+                                <td th:utext="${accommodation.getAccommodation().getDuePay()}">На счету</td>
                                 <!--<td th:utext="${accommodation.getDuePay()}">Счетчики</td>-->
                                 <td>
                                     <a href="readers.html" class="btn btn-link" role="button">Перейти</a>

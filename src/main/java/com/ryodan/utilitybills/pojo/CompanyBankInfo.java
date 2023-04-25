@@ -28,9 +28,9 @@ public class CompanyBankInfo {
     @Column
     private String corrAcc; //корр.счет
 
-    @OneToOne
+  /*  @OneToOne
     @JoinColumn(name = "management_company_id")
-    private ManagementCompany managementCompany;
+    private ManagementCompany managementCompany;*/
 
 
 }

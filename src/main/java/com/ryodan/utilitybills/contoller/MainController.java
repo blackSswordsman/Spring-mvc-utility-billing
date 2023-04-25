@@ -23,13 +23,12 @@ public class MainController {
 
     @GetMapping
     public String getHomePage() {
-        return "accommodations";
+        return "test_acc_old";
     }
 
     @GetMapping("profile/{clientId}")
     public String getProfilePage(@PathVariable Long clientId, Model model) {
         Client client = clientRepository.getByPrimaryKey(clientId, Client.class);
-        //Inquiry sdfsd = inquiryRepository.getByName("sdfsd");
         List<Long> accommodationsIdList = client.getAccommodations().stream()
                 .map(Accommodation::getId)
                 .collect(Collectors.toList());

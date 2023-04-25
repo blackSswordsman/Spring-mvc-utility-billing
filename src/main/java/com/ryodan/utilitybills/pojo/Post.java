@@ -24,8 +24,8 @@ public class Post {
     @Column
     private Date created;
 
-    @OneToOne
+    /*@OneToOne
     @JoinColumn(name = "announcement_id")
-    private Announcement announcement;
+    private Announcement announcement;*/
 
 }
