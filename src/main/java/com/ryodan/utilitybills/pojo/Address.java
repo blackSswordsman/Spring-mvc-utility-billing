@@ -22,7 +22,7 @@ public class Address {
     @Column
     private Integer apartment;
 
-    @ToString.Exclude
+   // @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "street_id")
     private Street street;
@@ -30,7 +30,7 @@ public class Address {
     @OneToMany
     private List<User> user;
 
-    @ToString.Exclude
+    //@ToString.Exclude
     @OneToOne
     private Accommodation accommodation;
 

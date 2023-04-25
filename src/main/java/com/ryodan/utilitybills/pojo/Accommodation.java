@@ -21,12 +21,12 @@ public class Accommodation {
     @JoinColumn(name="accommodation_type_id")
     private AccommodationType accommodationType;
 
-    @ToString.Exclude
+    //@ToString.Exclude
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "personal_account_id")
     private PersonalAccount personalAcc;
 
-    @ToString.Exclude
+   // @ToString.Exclude
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Address address;
@@ -47,7 +47,7 @@ public class Accommodation {
     @OneToMany(fetch = FetchType.LAZY)
     private List<DuePay> duePay;
 
-    @ToString.Exclude
+    //@ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id")
     /*@Fetch(FetchMode.JOIN)*/

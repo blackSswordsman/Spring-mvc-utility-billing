@@ -13,7 +13,7 @@
 </head>
 <body>
 <!-- Navbar Start -->
-<nav class="navbar navbar-bg-dark" style="background-color: #e3f1fd;">
+<nav class="navbar navbar-dark " style="background-color: #5387d5">
     <div class="px-3">
 
     <span class="text-dark font-weight-bold" жку>
@@ -35,10 +35,9 @@
     <div class="row">
         <!-- Sidebar Start -->
         <div class="col-3 col-lg-2">
-            <div class="nav flex-column " aria-orientation="vertical">
+            <div class="nav flex-column nav-pills " aria-orientation="vertical">
                 <a class="nav-link" href="/admin">Профиль</a>
                 <a class="nav-link active" href="/admin">Помещения</a>
-                <a class="nav-link" href="/admin">Счетчики</a>
                 <a class="nav-link" href="/admin">Оплата</a>
                 <a class="nav-link" href="/admin">Квитанции</a>
                 <a class="nav-link" href="/admin">Заявки</a>
@@ -63,17 +62,22 @@
                                 <th>Адрес</th>
                                 <th>УК</th>
                                 <th>Счет</th>
+                                <th> Счетчики</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="accommodation : ${accommodations}">
                                 <td th:utext="${accommodation.getPersonalAcc().getAccountNum()}">Помещение №ЛС</td>
-                                <!--<td th:utext="${accommodation.getAddress().getStreet().getStreetName()}+' '
-                                +${accommodation.getAddress().getStreet().getCity().getCityName()}">Адрес</td>-->
+                                <td th:utext="${accommodation.getAddress().getStreet().getStreetName()}+' '
+                                +${accommodation.getAddress().getStreet().getCity().getCityName()}">Адрес</td>
                                 <td th:utext="${accommodationAddress}">УК</td>
-                                <td th:utext="${accommodation.getManagementCompany()}">УК</td>
-                                <td th:utext="${accommodation.getDuePay()}">Счет</td>
+                                <td th:utext="${accommodation.getDuePay()}">На счету</td>
+                                <!--<td th:utext="${accommodation.getDuePay()}">Счетчики</td>-->
+                                <td>
+                                    <a href="#" class="btn btn-link" role="button">Перейти</a>
                                 </td>
+                                <td> <button type="button" class="btn btn-primary">Оплатить</button> </td>
                             </tr>
                             </tbody>
                         </table>
@@ -86,15 +90,6 @@
             <!--            </div>-->
         <!-- Main panel End -->
 </div>
-
-
-
-
-
-
-
-
-
 
 <!-- Дополнительный JavaScript; выберите один из двух! -->
 

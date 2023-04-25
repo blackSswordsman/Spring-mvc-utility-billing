@@ -14,10 +14,10 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ToString.Exclude
+    //@ToString.Exclude
     private String RegionName;
 
-    @ToString.Exclude
+    //@ToString.Exclude
     @OneToMany
     private List<City> cities;
 }

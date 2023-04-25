@@ -30,7 +30,7 @@ public class AccommodationRepository {
         List<Accommodation> accommodations = entityManager.createQuery(HQL, Accommodation.class)
                 .setParameter("clientId", id)
                 .getResultList();
-        log.info(accommodations.toString());
+        //log.info(accommodations.toString());
         return accommodations;
     }
     public void save(Accommodation accommodation) {

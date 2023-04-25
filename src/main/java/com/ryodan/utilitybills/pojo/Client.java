@@ -29,7 +29,7 @@ public class Client {
     private Date updated;
 
     @OneToMany(fetch = FetchType.LAZY)
-//    @Fetch(FetchMode.JOIN)
+    @Fetch(FetchMode.JOIN)
     private List<Accommodation> accommodations;
 
     @OneToOne(fetch = FetchType.LAZY)

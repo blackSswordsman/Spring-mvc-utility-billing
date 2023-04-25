@@ -14,16 +14,16 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ToString.Exclude
+    //@ToString.Exclude
     @Column
     private String cityName;
 
-    @ToString.Exclude
+   // @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "region_id")
     private Region region;
 
-    @ToString.Exclude
+   // @ToString.Exclude
     @OneToMany
     private List<Street> streets;
 }

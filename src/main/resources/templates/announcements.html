@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Заявки</title>
+    <title>Объявления</title>
 </head>
 <body>
 <!-- Navbar Start -->
@@ -40,48 +40,27 @@
                 <a class="nav-link " href="/admin">Помещения</a>
                 <a class="nav-link" href="/admin">Оплата</a>
                 <a class="nav-link" href="/admin">Квитанции</a>
-                <a class="nav-link active" href="/admin">Заявки</a>
-                <a class="nav-link" href="/admin">Объявления</a>
+                <a class="nav-link" href="/admin">Заявки</a>
+                <a class="nav-link active" href="/admin">Объявления</a>
                 <a class="nav-link" href="/admin">Информация об УК</a>
             </div>
         </div>
         <!-- Sidebar End -->
         <!-- Main panel Start -->
         <div class="mainwindow col-9 col-lg-10 ">
-            <h1 class="text-left">Информация о заявках</h1>
+            <h1 class="text-left">Информация о событиях УК</h1>
             <div class="card box-shadow">
                 <div class="card-header">
-                    <h3 class="text-left">Заявки</h3>
+                    <h3 class="text-left">Объявления</h3>
                 </div>
-                <div class="card-body">
-                    <div class="table-panel">
-                        <table class="table table-striped bg-white">
-                            <thead>
-                            <tr>
-                                <th>Помещение №ЛС</th>
-                                <th>Наименование</th>
-                                <th>Вид заявки</th>
-                                <th>Статус</th>
-                                <th> Ответ</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each=" : ${}">
-                                <td th:utext="${}">Помещение №ЛС</td>
-                                <td th:utext="${}">Наименование</td>
-                                <td th:utext="${}">Вид заявки</td>
-                                <td th:utext="${}">Статус</td>
-                                <td th:utext="${}">Ответ</td>
-                                <!--<td th:utext="${accommodation.getDuePay()}">Счетчики</td>-->
-                                <!--<td>
-                                    <a href="#" class="btn btn-link" role="button">Перейти</a>
-                                </td>
-                                <td> <button type="button" class="btn btn-primary">Оплатить</button> </td>-->
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div >
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Название</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">УК</h6>
+                        <p class="card-text">Текст поста</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
                 </div>
             </div>
             <!--              </div>-->

@@ -1,0 +1,106 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="ru">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <title>Информация</title>
+</head>
+<body>
+<!-- Navbar Start -->
+<nav class="navbar navbar-dark " style="background-color: #5387d5">
+  <div class="px-3">
+
+    <span class="text-dark font-weight-bold" жку>
+    </span>
+    <span class="text-dark font-weight-bold">ЖКУ</span>
+  </div>
+  <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+
+  </ul>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="/logout">Logout</a>
+    </li>
+  </ul>
+</nav>
+<!-- Navbar End -->
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar Start -->
+    <div class="col-3 col-lg-2">
+      <div class="nav flex-column nav-pills " aria-orientation="vertical">
+        <a class="nav-link" href="/admin">Профиль</a>
+        <a class="nav-link active" href="/admin">Помещения</a>
+        <a class="nav-link" href="/admin">Оплата</a>
+        <a class="nav-link" href="/admin">Квитанции</a>
+        <a class="nav-link" href="/admin">Заявки</a>
+        <a class="nav-link" href="/admin">Объявления</a>
+        <a class="nav-link" href="/admin">Информация об УК</a>
+      </div>
+    </div>
+    <!-- Sidebar End -->
+    <!-- Main panel Start -->
+    <div class="mainwindow col-9 col-lg-10 ">
+      <h1 class="text-left">Информация об Управляющей Компании</h1>
+      <div class="card box-shadow">
+        <div class="card-header">
+          <h3 class="text-left">Список ваших УК</h3>
+        </div>
+        <div class="card-body">
+          <div class="table-panel">
+            <table class="table table-striped bg-white">
+              <thead>
+              <tr>
+                <th>Наименование УК</th>
+                <th>Адрес</th>
+                <th>ФИО представителя</th>
+                <th>Телефон</th>
+                <th> ИНН</th>
+                <th>Банковские реквизиты</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="">
+                <td th:utext="${}">Наименование УК</td>
+                <td th:utext="${}">Адрес</td>
+                <td th:utext="${}">ФИО представителя</td>
+                <td th:utext="${}">Телефон</td>
+                <td th:utext="${}">ИНН</td>
+                <!--<td th:utext="${accommodation.getDuePay()}">Счетчики</td>-->
+                <td>
+                  <a href="#" class="btn btn-link" role="button">Перейти</a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div >
+        </div>
+      </div>
+      <!--              </div>-->
+
+
+      <!--            </div>-->
+      <!-- Main panel End -->
+    </div>
+
+    <!-- Дополнительный JavaScript; выберите один из двух! -->
+
+    <!-- Вариант 1: пакет jQuery и Bootstrap (включает Popper) -->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>-->
+
+    <!-- Вариант 2: Отдельные JS для Popper и Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+</body>
+</html>

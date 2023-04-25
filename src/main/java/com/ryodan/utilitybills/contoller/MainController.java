@@ -23,7 +23,7 @@ public class MainController {
 
     @GetMapping
     public String getHomePage() {
-        return "home_test_navbar";
+        return "accommodations";
     }
 
     @GetMapping("profile/{clientId}")

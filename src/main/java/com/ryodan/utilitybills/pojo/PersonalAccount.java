@@ -17,7 +17,7 @@ public class PersonalAccount {
     @Column
     private String accountNum;
 
-    @ToString.Exclude
+   // @ToString.Exclude
     @OneToOne
     @JoinColumn(name = "accommodation_id")
     private Accommodation accommodation;
