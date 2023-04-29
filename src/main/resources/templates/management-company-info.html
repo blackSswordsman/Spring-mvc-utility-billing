@@ -67,12 +67,12 @@
               </tr>
               </thead>
               <tbody>
-              <tr th:each="">
-                <td th:utext="${}">Наименование УК</td>
-                <td th:utext="${}">Адрес</td>
-                <td th:utext="${}">ФИО представителя</td>
-                <td th:utext="${}">Телефон</td>
-                <td th:utext="${}">ИНН</td>
+              <tr th:each=" m: ${managementCompany}">
+                <td th:utext="${m.getName()}">Наименование УК</td>
+                <td th:text="${address}">Адрес</td>
+                <td th:utext="${m.getRepName()}">ФИО представителя</td>
+                <td th:utext="${m.getPhoneNumber()}">Телефон</td>
+                <td th:utext="${m.getIdNumber()}">ИНН</td>
                 <!--<td th:utext="${accommodation.getDuePay()}">Счетчики</td>-->
                 <td>
                   <a href="#" class="btn btn-link" role="button">Перейти</a>

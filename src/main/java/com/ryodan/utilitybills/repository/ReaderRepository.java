@@ -13,7 +13,7 @@ import static com.ryodan.utilitybills.utils.SqlTemplate.SELECT_ALL_TEMPLATE;
 public class ReaderRepository extends CommonRepository<Reader> {
 
     public List<Reader> getAllReaders() {
-        List<Reader> readers = entityManager.createNativeQuery(String.format(SELECT_ALL_TEMPLATE, "accommodations"),
+        List<Reader> readers = entityManager.createNativeQuery(String.format(SELECT_ALL_TEMPLATE, "readers"),
                 Reader.class).getResultList();
         return readers;
     }

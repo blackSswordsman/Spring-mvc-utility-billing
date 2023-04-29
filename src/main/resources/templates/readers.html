@@ -65,11 +65,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each=" : ${}">
-                                <td th:utext="${}">№ Счетчика</td>
-                                <td th:utext="${}">Тип</td>
-                                <td th:utext="${}">Прошлые показания</td>
-                                <td> <input type="text" th:field="*{}" placeholder="Текущие показания" /> </td>
+                            <tr th:each=" reader: ${readers}">
+                                <td th:utext="${reader.getNumber()}">№ Счетчика</td>
+                                <td th:utext="${reader.getReaderType().getName()}">Тип</td>
+                                <td th:utext="${reader.getLastReading()}">Прошлые показания</td>
+                                <td> <input type="text" placeholder="Текущие показания"  th:value="${reader.getCurrentReading()}"/> </td>
                                 </td>
                             </tr>
                             </tbody>

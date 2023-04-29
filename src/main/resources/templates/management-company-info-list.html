@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Оплата</title>
+    <title>Информация</title>
 </head>
 <body>
 <!-- Navbar Start -->
@@ -38,46 +38,45 @@
             <div class="nav flex-column nav-pills " aria-orientation="vertical">
                 <a class="nav-link" href="/admin">Профиль</a>
                 <a class="nav-link " href="/admin">Помещения</a>
-                <a class="nav-link active" href="/admin">Оплата</a>
+                <a class="nav-link" href="/admin">Оплата</a>
                 <a class="nav-link" href="/admin">Квитанции</a>
                 <a class="nav-link" href="/admin">Заявки</a>
                 <a class="nav-link" href="/admin">Объявления</a>
-                <a class="nav-link" href="/admin">Информация об УК</a>
+                <a class="nav-link active" href="/admin">Информация об УК</a>
             </div>
         </div>
         <!-- Sidebar End -->
         <!-- Main panel Start -->
         <div class="mainwindow col-9 col-lg-10 ">
-            <h1 class="text-left">Информация об оплате ЖКУ</h1>
+            <h1 class="text-left">Информация об Управляющей Компании</h1>
             <div class="card box-shadow">
                 <div class="card-header">
-                    <h3 class="text-left">История оплат</h3>
+                    <h3 class="text-left">Список ваших УК</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-panel">
                         <table class="table table-striped bg-white">
                             <thead>
                             <tr>
-                                <th>Помещение №ЛС</th>
-                                <th>Тип помещения</th>
+                                <th>Наименование УК</th>
                                 <th>Адрес</th>
-                                <th>УК</th>
-                                <th>Счетчики</th>
-                                <th> Счет</th>
-                                <th></th>
+                                <th>ФИО представителя</th>
+                                <th>Телефон</th>
+                                <th> ИНН</th>
+                                <th>Банковские реквизиты</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="accommodation : ${accommodations}">
-                                <td th:utext="${accommodation.getAccommodation().getPersonalAcc().getAccountNum()}">Помещение №ЛС</td>
-                                <td th:utext="${accommodation.getAccommodation().getAccommodationType().getName()}">Тип помещения</td>
-                                <td th:utext="${accommodation.getAddress()}">Адрес</td>
-                                <td th:utext="${accommodation.getAccommodation().getDuePay()}">На счету</td>
+                            <tr th:each=" m: ${managementCompanies}">
+                                <td th:utext="${m.getName()}">Наименование УК</td>
+                                <td th:text="${address}">Адрес</td>
+                                <td th:utext="${m.getRepName()}">ФИО представителя</td>
+                                <td th:utext="${m.getPhoneNumber()}">Телефон</td>
+                                <td th:utext="${m.getIdNumber()}">ИНН</td>
                                 <!--<td th:utext="${accommodation.getDuePay()}">Счетчики</td>-->
                                 <td>
-                                    <a href="readers.html" class="btn btn-link" role="button">Перейти</a>
+                                    <a href="#" class="btn btn-link" role="button">Перейти</a>
                                 </td>
-                                <td> <button type="button" class="btn btn-primary">Оплатить</button> </td>
                             </tr>
                             </tbody>
                         </table>

@@ -26,4 +26,5 @@ public class CommonRepository <D>{
     public D getByPrimaryKey(Long id, Class<D> clazz) {
         return entityManager.find(clazz, id);
     }
+
 }

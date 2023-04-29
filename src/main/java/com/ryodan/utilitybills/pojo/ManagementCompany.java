@@ -41,6 +41,7 @@ public class ManagementCompany {
     @OneToMany
     private List<Accommodation> accommodations;
 
+
     @OneToMany
     private List<Announcement> announcements;
 

@@ -36,8 +36,8 @@ public class DuePay {
     @JoinColumn(name = "personalAcc_id")
     private PersonalAccount personalAcc;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "accommodationId_id")
-    private Accommodation accommodation;
+    private Accommodation accommodation;*/
 
 }

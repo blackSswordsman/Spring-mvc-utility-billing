@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Помещения</title>
+    <title>Объявления</title>
 </head>
 <body>
 <!-- Navbar Start -->
@@ -38,62 +38,29 @@
         <div class="col-3 col-lg-2">
             <div class="nav flex-column nav-pills " aria-orientation="vertical">
                 <a class="nav-link" href="/admin">Профиль</a>
-                <a class="nav-link active" href="/accommodations">Помещения</a>
-                <a class="nav-link" href="#">Оплата</a>
+                <a class="nav-link " href="/admin">Помещения</a>
+                <a class="nav-link" href="/admin">Оплата</a>
                 <a class="nav-link" href="/admin">Квитанции</a>
                 <a class="nav-link" href="/admin">Заявки</a>
-                <a class="nav-link" href="#">Объявления</a>
+                <a class="nav-link active" href="/admin">Объявления</a>
                 <a class="nav-link" href="/admin">Информация об УК</a>
             </div>
         </div>
         <!-- Sidebar End -->
         <!-- Main panel Start -->
         <div class="mainwindow col-9 col-lg-10 ">
-            <h1 class="text-left">Информация о помещениях</h1>
-            <div class="card box-shadow">
+            <h1 class="text-left">Информация о событиях УК</h1>
+            <div class="card box-shadow" >
                 <div class="card-header">
-                    <h3 class="text-left">Помещения</h3>
+                    <h3 class="text-left">Объявления</h3>
                 </div>
-                <div class="card-body">
-                    <div class="table-panel">
-                        <table class="table table-striped bg-white">
-                            <thead>
-                            <tr>
-                                <th>Помещение №ЛС</th>
-                                <th>Тип помещения</th>
-                                <th>Адрес</th>
-                                <th>УК</th>
-                                <th>Баланс</th>
-                                <th>Счетчики</th>
-                                <th> Счет</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="accommodation : ${accommodations}">
-                                <td th:utext="${accommodation.getAccommodation().getPersonalAcc().getAccountNum()}">
-                                    Помещение №ЛС
-                                </td>
-                                <td th:utext="${accommodation.getAccommodation().getAccommodationType().getName()}">Тип
-                                    помещения
-                                </td>
-                                <td th:utext="${accommodation.getAddress()}">Адрес</td>
-                                <!--<td th:utext="${accommodation.getAccommodation().getManagementCompany().getName()}">УК</td>-->
-                                <td>
-                                    <a href="management-company-info.html"
-                                       th:href="@{/management-company-info/{id}(id=${accommodation.getAccommodation().
-                                       getManagementCompany().getId()})}" th:utext="${accommodation.getAccommodation().getManagementCompany().getName()}" >УК</a>
-                                </td>
-                                <td th:utext="${accommodation.getAccommodation().getDuePay().getAmountDue()}">На счету</td>
-                                <td>
-                                    <a href="readers.html" class="btn btn-link" role="button">Перейти</a>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary">Оплатить</button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Название</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">УК</h6>
+                        <p class="card-text">Текст поста</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,6 @@ public interface AddressService {
     Address getAddressById(Long id);
     void deleteAddressById(Long id);
 
-    String getFullAddressByClientId(Long id);
+    String getFullAddressById(Long id);
     String getConvertedAddressFromAccommodation(Accommodation accommodation);
 }

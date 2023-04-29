@@ -16,6 +16,7 @@ public class Announcement {
     @Column
     private String text;
 
+
     @OneToOne
     @JoinColumn(name = "post_id")
     private Post post;

@@ -44,8 +44,9 @@ public class Accommodation {
 
 //TODO check relations
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<DuePay> duePay;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "due_pay_id")
+    private DuePay duePay;
 
     //@ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)

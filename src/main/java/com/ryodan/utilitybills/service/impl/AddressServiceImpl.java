@@ -28,6 +28,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address getAddressById(Long id) {
+
         return addressRepository.getReferenceById(id);
     }
 
@@ -37,7 +38,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public String getFullAddressByClientId(Long id) {
+    public String getFullAddressById(Long id) {
 
         Address address = this.getAddressById(id);
         Street street = address.getStreet();
