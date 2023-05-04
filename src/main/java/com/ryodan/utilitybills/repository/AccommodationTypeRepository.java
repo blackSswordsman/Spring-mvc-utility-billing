@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AccommodationTypeRepository extends CommonRepository<AccommodationType>{
 
+
+
 }

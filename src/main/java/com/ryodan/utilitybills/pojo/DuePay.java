@@ -17,20 +17,17 @@ public class DuePay {
     private Double amountDue;
 
     @Column
-    private Date periodFor;
+    private String periodFor;
 
     @Column
     private Double prepaid;
 
-    @Column
-    private String status;
+    @OneToOne
+    @JoinColumn(name = "due_pay_status_id")
+    private DuePayStatus duePayStatus;
 
     @Column
     private Date created;
-
-    @OneToOne
-    @JoinColumn(name = "payment_id")
-    private PaymentStatus payment;
 
     @ManyToOne
     @JoinColumn(name = "personalAcc_id")

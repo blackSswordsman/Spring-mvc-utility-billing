@@ -5,15 +5,21 @@ import lombok.Data;
 
 import java.util.Date;
 
-/**Статус Начисления*/
 @Data
 @Entity
-@Table(name = "payment_statuses")
-public class PaymentStatus {
+@Table(name = "due_pay_statuses")
+public class DuePayStatus {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private Date updated;
+    private String name;
+
+    @Column
+    private Double amountPaid;
+
+    @Column
+    private Date date;
 }
